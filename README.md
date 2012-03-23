@@ -39,16 +39,18 @@ synopsis
 --------
 
 ```javascript
-var geoip = require('geoip-lite');
+var geoip = require("geoip-lite");
+
+geoip.load(__dirname + '/data');
 
 var ip = "207.97.227.239";
 var geo = geoip.lookup(ip);
 
 console.log(geo);
 { range: [ 3479299040, 3479299071 ],
-  country: 'US',
-  region: 'CA',
-  city: 'San Francisco',
+  country: "US",
+  region: "CA",
+  city: "San Francisco",
   ll: [37.7484, -122.4156] }
 ```
 
@@ -60,9 +62,9 @@ installation
 
 ### 2. get the datafiles
 
-Then download the city data files from https://github.com/bluesmoon/node-geoip/tree/master/data
-You need to get `geoip-city.dat` and `geoip-city-names.dat` and put them into the `data/` directory
-of this package.
+Then download the data files from https://github.com/bluesmoon/node-geoip/tree/master/data
+Place them in your project and use the directory name that you placed them in when you call
+geoip.load(<dirname>).
 
 API
 ---
@@ -85,8 +87,8 @@ If the IP address was found, the `lookup` method returns an object with the foll
 ```javascript
 {
    range: [ <low bound of IP block>, <high bound of IP block> ],
-   country: 'XX',                 // 2 letter ISO-3166-1 country code
-   region: 'RR',                  // 2 character region code.  For US states this is the 2 letter
+   country: "XX",                 // 2 letter ISO-3166-1 country code
+   region: "RR",                  // 2 character region code.  For US states this is the 2 letter
                                   // ISO-3166-2 subcountry code for other countries, this is the
                                   // FIPS 10-4 subcountry code
    city: "City Name",             // This is the full city name
