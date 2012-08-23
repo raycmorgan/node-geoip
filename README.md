@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/raycmorgan/node-geoip.png)](http://travis-ci.org/raycmorgan/node-geoip)
 GeoIP-lite
 ==========
 
